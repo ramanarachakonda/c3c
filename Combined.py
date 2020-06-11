@@ -9,25 +9,31 @@ import io
 import re
 import csv
 import pandas as pd
-from datetime import datetime, date
+from datetime import datetime
 
-burl_url = 'https://services1.arcgis.com/X3dmaNvzWUnemDAc/arcgis/rest/services/Cases_current/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=name%20asc&resultOffset=0&resultRecordCount=50&resultType=standard&cacheHint=true',
+burl_url = 'https://services1.arcgis.com/X3dmaNvzWUnemDAc/arcgis/rest/services/Cases_current/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=name%20asc&resultOffset=0&resultRecordCount=50&resultType=standard&cacheHint=true'
+
 gloc_url = 'https://services5.arcgis.com/ALQeR5k3182nooX1/arcgis/rest/services/COVID19/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outSR=102100&resultOffset=0&resultRecordCount=25&resultType=standard&cacheHint=true'
 
 def get_max_cases(hist_df, city, current):
-    
-    city_df = hist_df[hist_df['City'] == city]
-    new_current = max(max(city_df['Total_Cases']), current) #if Max(total)>max(confirmed) then "Call"
-    county = city_df['County'].values[0]
-    state = city_df['State'].values[0]
+    if not city:
+        return (None, None, current, True)
+    try:
+        city_df = hist_df[hist_df['City'] == city]
+        new_current = max(max(city_df['Total_Cases']), current) #if Max(total)>max(confirmed) then "Call"
+        county = city_df['County'].values[0]
+        state = city_df['State'].values[0]
 
-    return state, county, new_current, not(current != new_current)
+        return state, county, new_current, not(current != new_current)
+    except:
+        return get_max_cases(hist_df, city[:-3], current)
 
 
 def main():
     hist_df = pd.read_csv('Webscraping_Db.csv')
     content = ''
-
+    today = datetime.now()
+    
     dic = {
         'burl': (burl_url, 'name', 'confirmed', True),
         'gloc': (gloc_url, 'MUNICIPALI', 'COVID', False),
@@ -41,13 +47,13 @@ def main():
         parsed_json = json.loads(response.content)
 
         for city in parsed_json['features']:
-            cityname = (city['attributes'][name])
+            cityname = (city['attributes'][name]).upper()
             cur_data = int(city['attributes'][cases])
             state, county, new_current, changed = get_max_cases(hist_df, cityname, cur_data)
             if has_date:
                 date = datetime.fromtimestamp(int(str(city['attributes']['reportdt'])[:-3])).date()
             else:
-                date = date.today()
+                date = today.date()
 
             content += f'{state}, {county}, {cityname}, {new_current}, {date.isoformat()}, {changed}\n'
 
@@ -56,25 +62,32 @@ def main():
     raw_content = requests.get(camden_raw_url).content.decode()
 
     camden_url = re.search(r'url=(.*?)"', raw_content).group(1)
-    content = requests.get(camden_url).content.decode()
+    html_content = requests.get(camden_url).content.decode()
 
-    d = re.search(r'<meta name="description" content="Updated: ([A-Z][a-z]+\s*\d+,\s*\d+)"', content)
+    d = re.search(r'<meta name="description" content="Updated: ([A-Z][a-z]+\s*\d+,\s*\d+)"', html_content)
 
     date = datetime.strptime(d.group(1), "%B %d, %Y")
     camd_content = []
     
-    for m in re.findall(r';([A-Z\s*]+\s*(TOWNSHIP|BOROUGH))\s*<br>\s*([0-9]+);([0-9]+)', content, re.MULTILINE | re.DOTALL):
-        city, total_cases = m[0], m[2]
+    for m in re.findall(r';([A-Z\s*]+\s*(TOWNSHIP|BOROUGH))\s*<br>\s*([0-9]+);([0-9]+)', html_content, re.MULTILINE | re.DOTALL):
+        city, total_cases = m[0].upper(), m[2]
+        
         state, county, new_current, changed = get_max_cases(hist_df, city, total_cases)
+        if not state:
+            state = 'New Jersey'
+            county = 'Camden'
         content += f'{state}, {county}, {city}, {new_current}, {date.isoformat()}, {changed}\n'
 
-    #Adding Content to DF and Parsing dates 
+    #Adding Content to DF and Parsing dates
+
     df = pd.read_csv(io.StringIO(content), header=None)
-    df[3] = pd.to_datetime(df[3])
+    df[4] = pd.to_datetime(df[4])
 
-    df.columns = ['State', 'County', 'City', 'Total Cases', 'Date', 'Error']
+    df.columns = ['State', 'County', 'City', 'Total Cases', 'Date', 'Ok']
 
-    df.to_csv(r'3County_runon_6.03.2020_916.csv')
+    df.to_csv(f'3County_runon_{today.strftime("%m.%d.%Y_%H.%M")}.csv')
+
 
 if __name__ == '__main__':
     main()
+
