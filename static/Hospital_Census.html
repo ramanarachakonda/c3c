@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js" type="text/javascript"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.3/scriptaculous.js" type="text/javascript"></script>
+
+
+    </head>
+    <body>
+        <iframe width="100%" height="800px" sandbox="allow-same-origin allow-scripts" src="https://maps.arcgis.com/apps/MapSeries/index.html?appid=c2efd1898e48452e83d7218329e953d7" frameborder="0" scrolling="no"></iframe>
+        <script type="text/javascript">
+            jQuery(document).ready(function() {
+                setTimeout(function(){
+                    document.querySelector('iframe').contentWindow.document.body.querySelector("#nav-bar > div > div.entries > ul > li:nth-child(4) > button")
+                }, 10000);
+            });
+        </script>
+    </body>
+</html>

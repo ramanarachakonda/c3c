@@ -1,0 +1,98 @@
+,State,County,City,Total Cases,Date,Ok
+0,New Jersey, Burlington, BASS RIVER TWP,8,2020-06-12, True
+1,New Jersey, Burlington, BEVERLY CITY,26,2020-06-12, True
+2,New Jersey, Burlington, BORDENTOWN CITY,31,2020-06-12, True
+3,New Jersey, Burlington, BORDENTOWN TWP,79,2020-06-12, True
+4,New Jersey, Burlington, BURLINGTON CITY,97,2020-06-12, True
+5,New Jersey, Burlington, BURLINGTON TWP,438,2020-06-12, True
+6,New Jersey, Burlington, CHESTERFIELD TWP,134,2020-06-12, True
+7,New Jersey, Burlington, CINNAMINSON TWP,154,2020-06-12, True
+8,New Jersey, Burlington, DELANCO TWP,41,2020-06-12, False
+9,New Jersey, Burlington, DELRAN TWP,145,2020-06-12, True
+10,New Jersey, Burlington, EASTAMPTON TWP,59,2020-06-12, True
+11,New Jersey, Burlington, EDGEWATER PARK TWP,102,2020-06-12, True
+12,New Jersey, Burlington, EVESHAM TWP,338,2020-06-12, True
+13,New Jersey, Burlington, FIELDSBORO BORO,6,2020-06-12, True
+14,New Jersey, Burlington, FLORENCE TWP,91,2020-06-12, True
+15,New Jersey, Burlington, HAINESPORT TWP,39,2020-06-12, True
+16,New Jersey, Burlington, LUMBERTON TWP,124,2020-06-12, True
+17,New Jersey, Burlington, MANSFIELD TWP,58,2020-06-12, True
+18,New Jersey, Burlington, MAPLE SHADE TWP,310,2020-06-12, True
+19,New Jersey, Burlington, MEDFORD LAKES BORO,11,2020-06-12, True
+20,New Jersey, Burlington, MEDFORD TWP,133,2020-06-12, True
+21,New Jersey, Burlington, MOORESTOWN TWP,296,2020-06-12, True
+22,New Jersey, Burlington, MOUNT HOLLY TWP,88,2020-06-12, True
+23,New Jersey, Burlington, MOUNT LAUREL TWP,336,2020-06-12, True
+24,New Jersey, Burlington, NEW HANOVER TWP,53,2020-06-12, True
+25,New Jersey, Burlington, NORTH HANOVER TWP,33,2020-06-12, True
+26,New Jersey, Burlington, PALMYRA BORO,49,2020-06-12, True
+27,New Jersey, Burlington, PEMBERTON BORO,5,2020-06-12, True
+28,New Jersey, Burlington, PEMBERTON TWP,384,2020-06-12, True
+29,New Jersey, Burlington, RIVERSIDE TWP,100,2020-06-12, True
+30,New Jersey, Burlington, RIVERTON BORO,12,2020-06-12, True
+31,New Jersey, Burlington, SHAMONG TWP,21,2020-06-12, True
+32,New Jersey, Burlington, SOUTHAMPTON TWP,65,2020-06-12, True
+33,New Jersey, Burlington, SPRINGFIELD TWP,14,2020-06-12, True
+34,New Jersey, Burlington, TABERNACLE TWP,28,2020-06-12, True
+35,New Jersey, Burlington, WASHINGTON TWP,1,2020-06-12, True
+36,New Jersey, Burlington, WESTAMPTON TWP,99,2020-06-12, True
+37,New Jersey, Burlington, WILLINGBORO TWP,613,2020-06-12, True
+38,New Jersey, Burlington, WOODLAND TWP,248,2020-06-12, True
+39,New Jersey, Burlington, WRIGHTSTOWN BORO,7,2020-06-12, True
+40,New Jersey, Glcouester, CLAYTON BOROUGH,73,2020-06-13, True
+41,New Jersey, Glcouester, DEPTFORD TOWNSHIP,523,2020-06-13, True
+42,New Jersey, Glcouester, EAST GREENWICH TOWNSHIP,54,2020-06-13, True
+43,New Jersey, Glcouester, ELK TOWNSHIP,30,2020-06-13, False
+44,New Jersey, Glcouester, FRANKLIN TOWNSHIP,80,2020-06-13, True
+45,New Jersey, Glcouester, GLASSBORO BOROUGH,130,2020-06-13, True
+46,New Jersey, Glcouester, GREENWICH TOWNSHIP,23,2020-06-13, True
+47,New Jersey, Glcouester, HARRISON TOWNSHIP,58,2020-06-13, True
+48,New Jersey, Glcouester, LOGAN TOWNSHIP,38,2020-06-13, True
+49,New Jersey, Glcouester, MANTUA TOWNSHIP,99,2020-06-13, True
+50,New Jersey, Glcouester, MONROE TOWNSHIP,267,2020-06-13, True
+51,New Jersey, Glcouester, NATIONAL PARK BOROUGH,19,2020-06-13, True
+52,New Jersey, Glcouester, NEWFIELD BOROUGH,8,2020-06-13, True
+53,New Jersey, Glcouester, PAULSBORO BOROUGH,59,2020-06-13, True
+54,New Jersey, Glcouester, PITMAN BOROUGH,43,2020-06-13, True
+55,New Jersey, Glcouester, SOUTH HARRISON TOWNSHIP,81,2020-06-13, False
+56,New Jersey, Glcouester, SWEDESBORO BOROUGH,39,2020-06-13, True
+57,New Jersey, Glcouester, WASHINGTON TOWNSHIP,348,2020-06-13, True
+58,New Jersey, Glcouester, WENONAH BOROUGH,13,2020-06-13, True
+59,New Jersey, Glcouester, WEST DEPTFORD TOWNSHIP,156,2020-06-13, True
+60,New Jersey, Glcouester, WESTVILLE BOROUGH,38,2020-06-13, True
+61,New Jersey, Glcouester, WOODBURY CITY,97,2020-06-13, True
+62,New Jersey, Glcouester, WOODBURY HEIGHTS BOROUGH,16,2020-06-13, True
+63,New Jersey, Glcouester, WOOLWICH TOWNSHIP,93,2020-06-13, True
+64,New Jersey, Camden, AUDUBON BOROUGH,53,2020-06-12, True
+65,New Jersey, Camden, AUDUBON PARK BOROUGH,6,2020-06-12, True
+66,New Jersey, Camden, BARRINGTON BOROUGH,42,2020-06-12, True
+67,New Jersey, Camden, BELLMAWR BOROUGH,119,2020-06-12, True
+68,New Jersey, Camden, BERLIN BOROUGH,61,2020-06-12, True
+69,New Jersey, Camden, BERLIN TOWNSHIP,37,2020-06-12, True
+70,New Jersey, Camden, BROOKLAWN BOROUGH,26,2020-06-12, True
+71,New Jersey, Camden, CHERRY HILL TOWNSHIP,946,2020-06-12, True
+72,New Jersey, Camden, CHESILHURST BOROUGH,27,2020-06-12, True
+73,New Jersey, Camden, CLEMENTON BOROUGH,68,2020-06-12, True
+74,New Jersey, Camden, COLLINGSWOOD BOROUGH,108,2020-06-12, True
+75,New Jersey, Camden, GIBBSBORO BOROUGH,8,2020-06-12, True
+76,New Jersey, Camden, GLOUCESTER TOWNSHIP,677,2020-06-12, True
+77,New Jersey, Camden, HADDON HEIGHTS BOROUGH,27,2020-06-12, True
+78,New Jersey, Camden, HADDON TOWNSHIP,81,2020-06-12, True
+79,New Jersey, Camden, HADDONFIELD BOROUGH,55,2020-06-12, True
+80,New Jersey, Camden, LAUREL SPRINGS BOROUGH,19,2020-06-12, True
+81,New Jersey, Camden, LAWNSIDE BOROUGH,43,2020-06-12, True
+82,New Jersey, Camden, LINDENWOLD BOROUGH,428,2020-06-12, True
+83,New Jersey, Camden, MAGNOLIA BOROUGH,23,2020-06-12, True
+84,New Jersey, Camden, MERCHANTVILLE BOROUGH,48,2020-06-12, True
+85,New Jersey, Camden, MOUNT EPHRAIM BOROUGH,25,2020-06-12, True
+86,New Jersey, Camden, OAKLYN BOROUGH,25,2020-06-12, True
+87,New Jersey, Camden, PENNSAUKEN TOWNSHIP,631,2020-06-12, True
+88,New Jersey, Camden, PINE HILL BOROUGH,111,2020-06-12, True
+89,New Jersey, Camden, PINE VALLEY BOROUGH,0,2020-06-12, True
+90,New Jersey, Camden, RUNNEMEDE BOROUGH,74,2020-06-12, True
+91,New Jersey, Camden, SOMERDALE BOROUGH,51,2020-06-12, True
+92,New Jersey, Camden, STRATFORD BOROUGH,55,2020-06-12, True
+93,New Jersey, Camden, VOORHEES TOWNSHIP,534,2020-06-12, True
+94,New Jersey, Camden, WATERFORD TOWNSHIP,65,2020-06-12, True
+95,New Jersey, Camden, WINSLOW TOWNSHIP,487,2020-06-12, True
+96,New Jersey, Camden, WOODLYNNE BOROUGH,77,2020-06-12, True

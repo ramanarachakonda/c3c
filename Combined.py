@@ -85,7 +85,9 @@ def main():
 
     df.columns = ['State', 'County', 'City', 'Total Cases', 'Date', 'Ok']
 
-    df.to_csv(f'3County_runon_{today.strftime("%m.%d.%Y_%H.%M")}.csv')
+    filename = f'3County_runon_{today.strftime("%m.%d.%Y_%H.%M")}.csv'
+    df.to_csv(filename)
+    print(f'New file created> {filename}')
 
 
 if __name__ == '__main__':
