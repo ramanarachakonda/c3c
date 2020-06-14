@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
 import requests
 import shutil
 import urllib
@@ -55,7 +53,7 @@ def main():
             else:
                 date = today.date()
 
-            content += f'{state}, {county}, {cityname}, {new_current}, {date.isoformat()}, {changed}\n'
+            content += f'{state},{county},{cityname},{new_current},{date.isoformat()},{changed}\n'
 
     #Camden Starts here
     camden_raw_url = 'https://datawrapper.dwcdn.net/E7uou/'
@@ -69,14 +67,14 @@ def main():
     date = datetime.strptime(d.group(1), "%B %d, %Y")
     camd_content = []
     
-    for m in re.findall(r';([A-Z\s*]+\s*(TOWNSHIP|BOROUGH))\s*<br>\s*([0-9]+);([0-9]+)', html_content, re.MULTILINE | re.DOTALL):
+    for m in re.findall(r';([A-Z\s*]+\s*(TOWNSHIP|BOROUGH|CITY|TAVISTOCK))\s*<br>\s*([0-9]+);([0-9]+)', html_content, re.MULTILINE | re.DOTALL):
         city, total_cases = m[0].upper(), m[2]
         
         state, county, new_current, changed = get_max_cases(hist_df, city, total_cases)
         if not state:
             state = 'New Jersey'
             county = 'Camden'
-        content += f'{state}, {county}, {city}, {new_current}, {date.isoformat()}, {changed}\n'
+        content += f'{state},{county},{city},{new_current},{date.isoformat()},{changed}\n'
 
     #Adding Content to DF and Parsing dates
 
