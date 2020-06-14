@@ -68,7 +68,7 @@ def main():
     date = datetime.strptime(d.group(1), "%B %d, %Y")
     camd_content = []
     
-    for m in re.findall(r';([A-Z\s*]+\s*(TOWNSHIP|BOROUGH|CITY|TAVISTOCK))\s*<br>\s*([0-9]+);([0-9]+)', html_content, re.MULTILINE | re.DOTALL):
+    for m in re.findall(r';([A-Z\s*]+\s*(TOWNSHIP|BOROUGH|CITY|HI-NELLA|TAVISTOCK))\s*<br>\s*([0-9]+);([0-9]+)', html_content, re.MULTILINE | re.DOTALL):
         city, total_cases = m[0].upper(), m[2]
         
         state, county, new_current, changed = get_max_cases(hist_df, city, total_cases)
